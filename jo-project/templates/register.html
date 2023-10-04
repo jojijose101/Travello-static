@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <link rel="stylesheet" href="{% static 'styles/style.css'%}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <h6 style="color:red;">{% for i in messages %}
+        {{i}}
+        {% endfor %}</h6>
+      <form action="register" method="post">
+{% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input name="username" type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">First name</span>
+            <input name="first_name" type="text" placeholder="Enter your first name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last name</span>
+            <input name="last_name" type="text" placeholder="Enter your last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email Id</span>
+            <input name="email" type="email" placeholder="Enter your email Id" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input name="password" type="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input name="password1" type="password" placeholder="Confirm your password" required>
+          </div>
+        </div>
+
+
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
